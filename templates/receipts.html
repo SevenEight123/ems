@@ -1,0 +1,37 @@
+{%extends 'layout.html' %}
+
+
+{% block body %}
+
+<table class="table table-striped table-hover">
+	<thead>
+	<tr>
+		<th>id</th>
+		<th>Name</th>
+		<th>Rezept</th>
+		<th>Zutaten</th>
+	</tr>
+	<thead>
+	<tbody>
+	{% for meal in meals  %}
+		
+		<tr>
+			
+			<td>{{meal.id}}</td>
+			<td>{{meal.name}}</td>
+			<td>{{meal.recipe}}</td>
+			<td>{{meal.ingrd}}</td>
+			
+		</tr>
+
+	{%endfor%}
+	</tbody>
+</table>
+<td><a href="/add_meal" class="btn btn-default">Gericht hinzufügen</a></td>
+
+
+
+
+
+
+{% endblock %}

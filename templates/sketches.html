@@ -1,0 +1,32 @@
+{%extends 'layout.html' %}
+
+
+{% block body %}
+
+
+<table class="table table-striped table-hover">
+	<thead>
+	<tr>
+		<th>Id</th>
+		<th>Zeitstempel</th>
+		<th>Name</th>
+		<th></th>
+		<th></th>
+	</tr>
+	<thead>
+	<tbody>
+	{% for sketch in sketches  %}
+		
+		<tr>
+			
+			<td>{{sketch.id}}</td>
+			<td>{{sketch.timestamp}}</td>
+			<td>{{sketch.name}}</td>
+			<td><a href="/sketch/{{sketch.id}}" class="btn btn-default pull-right">view/edit</a></td>
+		</tr>
+
+	{%endfor%}
+	</tbody>
+</table>
+
+{% endblock %}

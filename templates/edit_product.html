@@ -1,0 +1,48 @@
+{%extends 'layout.html' %}
+
+
+{% block body %}
+<img src="/{{product.pic}}" class="img-rounded" alt="{{product.pic}}">
+<form method="POST" action="">
+    <div class="form-group">
+      <label>Produkt EAN</label>
+      <input type="text" class="form-control" disabled name="ean" value="{{product.ean}}" >
+    </div>
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" class="form-control" name="name" value="{{product.name}}" >
+    </div>
+    <div class="form-group">
+      <label>DetailName</label>
+      <input type="text" class="form-control" name="detailname" value="{{product.detailname}}" >
+    </div>
+    <div class="form-group">
+      <label>Hersteller</label>
+      <input type="text" class="form-control" name="vendor" value="{{product.vendor}}" >
+    </div>
+    <div class="form-group">
+      <label>Hauptkategorie</label>
+      <input type="text" class="form-control" name="maincat" value="{{product.maincat}}" >
+    </div>
+    <div class="form-group">
+      <label>Subkategorie</label>
+      <input type="text" class="form-control" name="subcat" value="{{product.subcat}}" >
+    </div>
+    <div class="form-group">
+      <label>Beschreibung</label>
+      <input type="text" class="form-control" name="descr" value="{{product.descr}}" >
+    </div>
+    <div class="form-group">
+      <label>Herkunft</label>
+      <input type="text" class="form-control" name="origin" value="{{product.origin}}" >
+    </div>
+    <div class="form-group">
+      <label>Preis</label>
+      <input type="text" class="form-control" name="price" value="{{product.price}}" >
+    </div>
+
+    <button type="submit" class="btn btn-success">Änderungen speichern</button>
+    <a href="/delete_product/{{product.ean}}" class="btn btn-danger">Produkt löschen</a>
+
+
+{% endblock %}

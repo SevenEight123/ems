@@ -1,0 +1,34 @@
+{%extends 'layout.html' %}
+
+
+{% block body %}
+
+<h1>Einkaufsliste</h1>
+<a href="/add_basket" class="btn btn-default">Warenkorb eintragen</a>
+
+<table class="table table-striped table-hover">
+	<thead>
+	<tr>
+		<th>id</th>
+		<th>Einkaufsort</th>
+		<th>Datum</th>
+		<th>Eintrag von</th>
+	</tr>
+	<thead>
+	<tbody>
+	{% for basket in baskets  %}
+		
+		<tr>
+			
+			<td>{{basket.id}}</td>
+			<td>{{basket.shop_name}}</td>
+			<td>{{basket.date}}</td>
+			<td>{{basket.user}}</td>
+			<td><a href="/basket/{{basket.id}}" class="btn btn-default pull-right">View</a></td>
+		</tr>
+
+	{%endfor%}
+	</tbody>
+</table>
+
+{% endblock %}

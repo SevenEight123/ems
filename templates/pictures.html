@@ -1,0 +1,27 @@
+{%extends 'layout.html' %}
+
+
+{% block body %}
+
+
+<table class="table table-striped table-hover">
+	<thead>
+	<tr>
+		<th>Picture ID</th>
+		<th>Picture</th>
+	</tr>
+	<thead>
+	<tbody>
+	{% for picture in pictures  %}
+		
+		<tr>
+			
+			<td>{{picture.id}}</td>
+			<td><img src="/{{picture.picpath}}"></td>
+		</tr>
+
+	{%endfor%}
+	</tbody>
+</table>
+
+{% endblock %}

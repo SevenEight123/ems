@@ -1,0 +1,29 @@
+
+
+def try_db_update_for(product_ean):
+
+def db_get_product(product_ean)
+
+def db_get_products():
+
+def db_add_product(product_ean):
+
+def db_update_product(product):
+
+def db_delete_product(product_ean):
+
+
+def db_get_basket(basket_id):
+
+
+def db_get_baskets():		
+
+def db_add_basket():
+
+def db_delete_basket(basket_id):
+
+def db_put_product_into_basket(product_ean,basket_id):
+
+def db_remove_product_from_basket(product_ean,basket_id):	
+
+

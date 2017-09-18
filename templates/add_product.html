@@ -1,0 +1,67 @@
+{%extends 'layout.html'%}
+
+{% block body %}
+
+<h1>Produkt eintragen</h1>
+
+<form method="POST" action="">
+	<div class="form-group">
+	<label>EAN</label>
+	<input type="text" name="product_ean" class="form-control" value="">
+	</div>
+	<div class="form-group">
+	<label>Preis</label>
+	<input type="text" name="product_price" class="form-control" value="0.00">
+	</div>
+	<button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+
+	{% if success %}
+
+	<table class="table table-striped table-hover">
+		
+		<thead>
+			<tr>
+				<th>EAN</th>
+				<th>Name</th>
+				<th>DetailName</th>
+				<th>Hersteller</th>
+				<th>Hauptkategorie</th>
+				<th>Subkategorie</th>
+				<th>Beschreibung</th>
+				<th>Herkunftsland</th>
+				<th>Preis</th>
+				<th></th>
+			</tr>
+		<thead>
+
+		<tbody>
+	
+		
+			<tr>
+			
+				<td>{{product.ean}}</td>
+				<td>{{product.name}}</td>
+				<td>{{product.detailname}}</td>
+				<td>{{product.vendor}}</td>
+				<td>{{product.maincat}}</td>
+				<td>{{product.subcat}}</td>
+				<td>{{product.descr}}</td>
+				<td>{{product.origin}}</td>
+				<td>{{price}}</td>
+				<td><a href="/edit_product/{{product.ean}}" class="btn btn-default pull-right">edit</a></td>
+			
+			</tr>
+
+	
+		</tbody>
+
+	</table>
+
+
+
+	{% endif %}
+
+{% endblock %}

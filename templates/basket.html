@@ -1,0 +1,130 @@
+{%extends 'layout.html' %}
+
+
+{% block body %}
+
+<div class="row">
+  
+  <div class = "col-md-12">
+    
+    <div class="page-header">
+      
+      <p><a href="/baskets" class="btn btn-default btn-sm pull-right">zurück</a></p>
+    
+    </div>
+
+  </div>
+    
+
+</div>
+
+</br>
+
+<div class="row">
+  
+
+  <div class="col-md-12">
+
+    <table class="table table-bordered table-responsive table-condensed">
+  <thead class="thead-inverse">
+    <tr>
+      <th>Warenkorb ID</th>
+      <th>Einkaufsdatum</th>
+      <th>Einkaufsort</th>
+      <th>Eink&auml;ufer</th>
+      <th>Gesamtpreis</th>
+      <th>Kassenbon</th>    
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">{{basket_info.id}}</th>
+      <td align="right">{{basket_info.date}}</td>
+      <td align="right">{{basket_info.shop_name}}</td>
+      <td align="right">{{basket_info.user}}</td>
+      <td align="right">{{basket_price}} &euro;</td>
+      <td align="right"><a href="/{{basket_info.bonpic}}" target="_blank">{{basket_info.bonpic}}</a></td>
+    </tr>
+  </tbody>
+</table> 
+
+     </div> 
+     </div> 
+<div class= "row">
+
+
+<div class ="col-md-12">
+
+   <form method="POST" action="">
+
+    <div class="input-group">
+      
+      <input type="text" class="form-control" name="addProductToBasket" placeholder="Produkt EAN eingeben">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button submit">Produkt hinzufügen</button>
+      </span>
+    </div>
+
+  </form> 
+</div>
+
+
+
+
+</div>
+<div class="row">
+ <div class="col-md-12"> 
+ </br>
+  <h4> Gekaufte Produkte:</h4>
+  
+
+  <table class="table table-striped " >
+  <thead class="thead-inverse">
+    <tr>
+      <th>EAN</th>
+      <th>Name</th>
+      <th>Detailname</th> 
+      <th>Kategorie</th>
+      <th>Preis/Stk</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    {% for item in basket_items %}
+    <tr>
+          <th scope="row">{{item.ean}}</th>
+          <td>{{item.name}}</td>
+          <td>{{item.detailname}}</td>
+          <td >{{item.maincat}}</td>
+          <td>{{item.price}} &euro;</td>
+          <td align="right">
+          <a href="/edit_product/{{item.ean}}" class="btn btn-default">editieren</a> 
+          <a class="btn btn-warning " href="/delete/{{basket_info.id}}/{{item.ean}}/{{item.p_id}}">Löschen</a></td>   
+      </tr>
+    {% endfor %}
+    <tr>
+          <th scope="row">Gesamtpreis</th>
+          <td></td>
+          <td></td>  
+          <td>{{basket_price}} &euro;</td>
+          <td></td>
+          <td></td>   
+      
+    </tr>  
+  </tbody>
+  </table> 
+   </div>  
+</div>
+<div class="row"> 
+
+  <div class="col-md-9">
+  </div>
+  
+  <div class= "col-md-3">
+
+  <a class="btn btn-warning btn-block" href="/delete_basket/{{basket_info.id}}">Warenkorb löschen</a>
+  </div>
+
+</div>
+  
+{% endblock %}

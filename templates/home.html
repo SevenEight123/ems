@@ -1,0 +1,21 @@
+{%extends 'layout.html' %}
+
+
+{% block body %}
+	<div class= "jumbotron text-center">
+		<h1> Willkommen bei EMS </h1>
+		<p class="lead"> System zum Erfassen von Einkäufen und Task Scheduling </p>
+		
+		{%if session.logged_in == NULL%}
+
+			
+			<a href="/login" class = "btn btn-success btn-lg">Login</a>
+			
+
+		{%else%}
+
+			<a href="/shutdown" class = "btn btn-success btn-lg">Shutdown EMS</a>			
+		{%endif%}
+</div>
+
+{% endblock %}

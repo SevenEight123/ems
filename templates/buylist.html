@@ -1,0 +1,30 @@
+{%extends 'layout.html' %}
+
+
+{% block body %}
+
+
+<table class="table table-striped table-hover">
+	<thead>
+	<tr>
+		<th>Name</th>
+		<th>DetailName</th>
+		<th>Menge</th>
+	</tr>
+	<thead>
+	<tbody>
+	{% for product in buylist  %}
+		
+		<tr>
+			
+			<td>{{product.name}}</td>
+			<td>{{product.detailname}}</td>
+			<td>{{product.amount}}</td>
+			<td><a href="/buylist_remove/{{product.ean}}" class="btn btn-default pull-right">remove</a></td>
+		</tr>
+
+	{%endfor%}
+	</tbody>
+</table>
+
+{% endblock %}

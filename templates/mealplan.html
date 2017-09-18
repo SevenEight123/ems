@@ -1,0 +1,118 @@
+{%extends 'layout.html' %}
+
+
+{% block body %}
+
+
+<div class = "row">
+
+
+
+<div class = "col-md-3">
+
+<ul class="list-group">
+
+<a href="/meal/{{mealplan.mo}}" class="list-group-item">
+      <h4 class="list-group-item-heading"><b>Montag</b></h4>
+      <p class="list-group-item-text"> <h5>{{mealplan.mo_mn}}</h5>   
+  <select class="selectpicker" data-live-search="true" title="Anderes Gericht wählen...">
+  
+  {%for meal in meals%}
+  <option value="/changemeal/{{mealplan.id}}/mo/{{meal.id}}">{{meal.name}}</option>
+  {%endfor%}
+
+  </select>
+  </p>      
+</a>
+
+<a href="/meal/{{mealplan.di}}" class="list-group-item">
+      <h4 class="list-group-item-heading"><b>Dienstag</b></h4>
+      <p class="list-group-item-text"><h5>{{mealplan.di_mn}}</h5>  
+        <select class="selectpicker" data-live-search="true" title="Anderes Gericht wählen...">
+  
+  {%for meal in meals%}
+  <option value="/changemeal/{{mealplan.id}}/di/{{meal.id}}">{{meal.name}}</option>
+  {%endfor%}
+
+</select></p>
+</a>
+
+<a href="/meal/{{mealplan.mi}}" class="list-group-item">
+      <h4 class="list-group-item-heading"><b>Mittwoch</b></h4>
+      <p class="list-group-item-text"><h5>{{mealplan.mi_mn}}</h5>
+        <select class="selectpicker" data-live-search="true" title="Anderes Gericht wählen...">
+  
+  {%for meal in meals%}
+  <option value="/changemeal/{{mealplan.id}}/mi/{{meal.id}}">{{meal.name}}</option>
+  {%endfor%}
+
+</select></p>
+</a>
+
+<a href="/meal/{{mealplan.do}}" class="list-group-item">
+      <h4 class="list-group-item-heading"><b>Donnerstag</b></h4>
+      <p class="list-group-item-text"><h5>{{mealplan.do_mn}}</h5>  
+        <select class="selectpicker" data-live-search="true" title="Anderes Gericht wählen...">
+  
+  {%for meal in meals%}
+  <option value="/changemeal/{{mealplan.id}}/do/{{meal.id}}">{{meal.name}}</option>
+  {%endfor%}
+
+</select></p>
+</a>
+
+<a href="/meal/{{mealplan.fr}}" class="list-group-item">
+      <h4 class="list-group-item-heading"><b>Freitag</b></h4>
+      <p class="list-group-item-text"><h5>{{mealplan.fr_mn}}</h5>  
+        <select class="selectpicker" data-live-search="true" title="Anderes Gericht wählen...">
+  
+  {%for meal in meals%}
+  <option value="/changemeal/{{mealplan.id}}/fr/{{meal.id}}">{{meal.name}}</option>
+  {%endfor%}
+
+</select></p>
+</a>
+
+<a href="/meal/{{mealplan.sa}}" class="list-group-item">
+      <h4 class="list-group-item-heading"><b>Samstag</b></h4>
+      <p class="list-group-item-text"><h5>{{mealplan.sa_mn}}</h5>  
+        <select class="selectpicker" data-live-search="true" title="Anderes Gericht wählen...">
+  
+  {%for meal in meals%}
+  <option value="/changemeal/{{mealplan.id}}/sa/{{meal.id}}">{{meal.name}}</option>
+  {%endfor%}
+
+</select></p>
+</a>
+
+<a href="/meal/{{mealplan.so}}" class="list-group-item">
+      <h4 class="list-group-item-heading"><b>Sonntag</b></h4>
+      <p class="list-group-item-text"><h5>{{mealplan.so_mn}}</h5>  
+        <select class="selectpicker" data-live-search="true" title="Anderes Gericht wählen...">
+  
+  {%for meal in meals%}
+  <option value="/changemeal/{{mealplan.id}}/so/{{meal.id}}">{{meal.name}}</option>
+  {%endfor%}
+
+</select></p>
+</a>
+
+</ul>
+
+</div>
+
+<div class = "col-md-9">
+  
+<h3> Menüplan </h3>
+  <a href="/newmealplan" class="btn btn-default">Neuen Plan generieren</a>
+</div>
+
+
+</div>
+
+
+
+
+{% endblock %}
+
+

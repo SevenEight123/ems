@@ -1,0 +1,29 @@
+{%extends 'layout.html' %}
+
+
+{% block body %}
+<h1>Nutzerprofil</h1>
+
+<p>{{session['username']}}</p>
+
+<h1>Notitzen</h1>
+
+<div class="panel-group">
+{% for note in notes %}
+    <div class="panel panel-default">
+      <div class="panel-heading">{{note.timestamp}}</div>
+      <div class="panel-body">{{note.note| safe}}</div>
+    </div>
+{% endfor %}
+</div>
+
+{% from 'includes/_formhelpers.html' import render_field %}
+<form method="POST" action="">
+	<div class="form-group">
+		{{ render_field(form.note, class="form-control" ,id="editor")}}
+	</div>
+	<p><input class="btn btn-primary" type="submit" value="Eintragen"></p>
+</form>
+
+
+{% endblock %}

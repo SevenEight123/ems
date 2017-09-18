@@ -1,0 +1,29 @@
+{%extends 'layout.html' %}
+
+
+{% block body %}
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">{{meal.name}}</div>
+  <div class="panel-body">
+    <p>{{meal.recipe}}</p>
+  </div>
+
+  
+<div class="list-group">
+	
+{%for ingrd in ingrds%}
+
+  <a href="/edit_product/{{ingrd.ean}}" class="list-group-item">{{ingrd.ean}}</a>
+
+{%endfor%}
+
+</div>
+
+
+
+
+
+
+{% endblock %}
